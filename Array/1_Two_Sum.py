@@ -10,3 +10,15 @@ def two_sum(nums,target):
 
 
 print(two_sum(nums,target))
+
+
+def two_sum_optimized(nums,target):
+    seen = {}
+    for idx,num in enumerate(nums):
+        diff = target - num
+        if diff in seen:
+            return [seen[diff],idx]
+        seen[num] = idx
+
+
+print(two_sum_optimized(nums,target))
